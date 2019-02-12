@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=Sarabun:400,500,700');
+
+:root {
+    --color-alpha: #de4831;
+    --color-beta: #e1decb;
+    --color-dark: #221e21;
+    --gutter: 24px;
+
+}
+
+
+body {
+    /* Positioning */
+
+    /* Box Model */
+    /* Fonts */
+    line-height: 1.6;
+    color: var(--color-dark);
+    font-family: 'Sarabun',
+        sans-serif;
+    font-size: 17px;
+    /* Other Styles */
+}
+
+.u-grid-main-layout {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    grid-template-rows: 100vh;
+}
+
+.c-sidebar {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    background-color: #e1decb;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: hidden;
+    box-sizing: border-box;
+
+
+}
+
+.c-content {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+}
+
+.c-menu__item {
+    margin-top: var(--gutter);
+    /* all: unset; */
+
+}
+
+.c-menu-list {
+
+    list-style: none;
+    padding: 0;
+}
+
+.c-sidebar__menu {}
+
+.c-sidebar__header {
+    display: flex;
+    align-items: center;
+}
+
+.c-sidebar__header-image {
+    width: 32px;
+    height: 32px;
+    margin-right: 12px;
+}
+
+.u-color__alpha {
+    color: var(--color-alpha);
+}
+
+.c-sidebar__header-text {
+    /* font-size: 2rem;
+    font-weight: 500; */
+
+}
+
+.c-content__countryblock {
+    background-color: red;
+    height: 100px;
+    width: 250px;
+    margin: var(--gutter);
+}
+
+.c-menu__link {
+    background: none !important;
+    color: var(--color-alpha);
+    font-weight: 700;
+    border: none;
+    padding: 0 !important;
+    /*border is optional*/
+    cursor: pointer;
+    margin: 0;
+}
