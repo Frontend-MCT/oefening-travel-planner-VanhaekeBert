@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Sarabun:400,500,700');
+/*!--------------------------------------------------------------------------*/
+/*!                                 Settings                                 */
+/*!                      Helper functions, global tools                      */
+/*!--------------------------------------------------------------------------*/
 
 :root {
     --color-alpha: #de4831;
@@ -8,25 +11,60 @@
 
 }
 
+/*!--------------------------------------------------------------------------*/
+/*!                                  Tools                                   */
+/*!                    @mixins (fonts, animations, etc..)                    */
+/*!--------------------------------------------------------------------------*/
+
+
+@import url('https://fonts.googleapis.com/css?family=Sarabun:400,500,700');
+
+
+/*!--------------------------------------------------------------------------*/
+/*!                                 Generic                                  */
+/*!                        Resets, Normalize.css, etc.                       */
+/*!--------------------------------------------------------------------------*/
+
 
 body {
-    /* Positioning */
-
-    /* Box Model */
-    /* Fonts */
     line-height: 1.6;
     color: var(--color-dark);
-    font-family: 'Sarabun',
-        sans-serif;
+    font-family: 'Sarabun', sans-serif;
     font-size: 17px;
-    /* Other Styles */
 }
 
-.u-grid-main-layout {
+/*!--------------------------------------------------------------------------*/
+/*!                                Elements                                  */
+/*!                      Styling for bare HTML elements                      */
+/*!--------------------------------------------------------------------------*/
+
+/*!--------------------------------------------------------------------------*/
+/*!                                 Objects                                  */
+/*!                          OOCSS, Design patterns.                         */
+/*!--------------------------------------------------------------------------*/
+
+
+
+.o-grid {
     display: grid;
-    grid-template-columns: 350px 1fr;
-    grid-template-rows: 100vh;
 }
+
+.o-hide {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/*!--------------------------------------------------------------------------*/
+/*!                               Components                                 */
+/*!                          Designed pieces of UI                           */
+/*!--------------------------------------------------------------------------*/
+
 
 .c-sidebar {
     grid-column-start: 1;
@@ -50,9 +88,9 @@ body {
     grid-row-start: 1;
     grid-row-end: 2;
     background-color: #ffffff;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
     overflow-y: auto;
     overflow-x: hidden;
 
@@ -83,10 +121,6 @@ body {
     margin-right: 12px;
 }
 
-.u-color__alpha {
-    color: var(--color-alpha);
-}
-
 .c-sidebar__header-text {
     /* font-size: 2rem;
     font-weight: 500; */
@@ -94,7 +128,6 @@ body {
 }
 
 .c-content__countryblock {
-    background-color: red;
     height: 100px;
     width: 250px;
     margin: var(--gutter);
@@ -109,4 +142,57 @@ body {
     /*border is optional*/
     cursor: pointer;
     margin: 0;
+}
+
+
+
+.c-country {
+    display: block;
+    opacity: 1;
+    cursor: pointer;
+}
+
+input:checked+.c-country {
+    opacity: 0.6;
+}
+
+
+.c-country-header {
+    display: flex;
+    align-items: center;
+}
+
+.c-country-header__name {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.c-country-header__flag {
+    display: block;
+    width: auto;
+    height: calc(var(--gutter) / 1.4);
+    border-radius: 5px;
+    margin-left: 8px;
+}
+
+.c-notificationcenter {}
+
+/*!--------------------------------------------------------------------------*/
+/*!                                Utilities                                 */
+/*!                       Overrids, helpers, utilities                       */
+/*!--------------------------------------------------------------------------*/
+
+
+.u-grid-main-layout {
+    grid-template-columns: 350px 1fr;
+    grid-template-rows: 100vh;
+}
+
+.u-grid-overview {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    margin: calc(var(--gutter)*2);
+}
+
+.u-color__alpha {
+    color: var(--color-alpha);
 }
